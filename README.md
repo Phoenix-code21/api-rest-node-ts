@@ -22,6 +22,7 @@ docker-compose up --build
 ```
 
 🔑 Autenticação
+---
 Todas as rotas de criação, edição e exclusão de blog exigem autenticação via JWT.
 
 🔓 Login
