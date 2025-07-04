@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  api_server:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mysql_db
+    env_file:
+      - .env
+    networks:
+      - phoenix_net
+
+  mysql_db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: node_api
+      MYSQL_USER: phoenix
+      MYSQL_PASSWORD: code21
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - phoenix_net
+
+networks:
+  phoenix_net:
+
+volumes:
+  mysql_data:
