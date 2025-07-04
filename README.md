@@ -22,10 +22,12 @@ docker-compose up --build
 ```
 
 🔑 Autenticação
----
+
+
 Todas as rotas de criação, edição e exclusão de blog exigem autenticação via JWT.
 
 🔓 Login
+
 POST /api/auth:
 
 Body:
@@ -48,6 +50,7 @@ Response:
 📚 Endpoints da API
 
 📌 Criar Blog
+
 POST /api/create/blog
 
 Body:
@@ -66,6 +69,7 @@ Response:
 ```
 
 ✏️ Atualizar Blog
+
 PUT /api/update/blog
 
 Body:
@@ -85,6 +89,7 @@ Response:
 ```
 
 🗑️ Deletar Blog
+
 DELETE /api/delete/blog
 
 
@@ -102,8 +107,10 @@ Response:
   "message": "Blog [1] deletado com sucesso!"
 }
 ```
+---
 
 🧪 Banco de Dados
+
 A pasta schema/ contém o script SQL necessário para criar o banco de dados MySQL utilizado na aplicação.
 Use-o para preparar o ambiente local ou executar testes com a mesma estrutura de produção.
 
